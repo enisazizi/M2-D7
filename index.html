@@ -412,7 +412,7 @@
           <nav class="blog-pagination">
             <a class="btn btn-outline-primary" href="#">Older</a>
             <a
-              class="btn btn-outline-secondary disabled"
+              class="btn btn-outline-secondary "
               href="#"
               tabindex="-1"
               aria-disabled="true"
@@ -539,9 +539,21 @@
     
     }
   }
-  function buttonNever(){
-      
-  }
+  const addNewBlogPost = () => {
+  let newDiv = document.createElement("div");
+  let newTitle = document.createElement("h2");
+  newTitle.innerText = "New Blog";
+  newDiv.style.height = "40px";
+  newDiv.style.backgroundColor = "blue";
+  let referenceBlog = document.querySelectorAll(".blog-post")[2];
+  referenceBlog.after(newDiv);
+  newDiv.appendChild(newTitle);
+};  
+
+let a = document.querySelectorAll(".blog-pagination a")[1];
+a.onclick=function(){
+  addNewBlogPost()
+}
  
     </script>
   </body>
